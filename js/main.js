@@ -4,11 +4,8 @@
   const btn = document.getElementById('btn');
 
   btn.addEventListener('click', () => {
-    // function fizzbuzz() {
       const fizzNum = Number(document.getElementById('fizznum').value);
       const buzzNum = Number(document.getElementById('buzznum').value);
-    //   // const fbArry = [];
-    //   // const fbText = [];
       if(!Number.isInteger(fizzNum) || !Number.isInteger(buzzNum) || fizzNum === 0 || buzzNum === 0) {
         let E_ul = document.createElement('ul');
         let E_li = document.createElement('li');
@@ -35,17 +32,8 @@
         ul.appendChild(li);
       }
       document.body.appendChild(ul)
-    // }
-
-    // fizzbuzz();
-
-    // let ul = document.createElement('ul');
-    // for(let i = 0; i < 100; i++) {
-    //   let li = document.createElement('li');
-    //   li.textContent = 'Buzz' + i;
-    //   ul.appendChild(li);
-    // }
-    // document.body.appendChild(ul);
+    (li);
+    
   });
   
 
