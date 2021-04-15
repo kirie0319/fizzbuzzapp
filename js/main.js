@@ -4,48 +4,31 @@
   const btn = document.getElementById('btn');
 
   btn.addEventListener('click', () => {
-    // function fizzbuzz() {
       const fizzNum = Number(document.getElementById('fizznum').value);
       const buzzNum = Number(document.getElementById('buzznum').value);
-    //   // const fbArry = [];
-    //   // const fbText = [];
-      if(!Number.isInteger(fizzNum) || !Number.isInteger(buzzNum) || fizzNum === 0 || buzzNum === 0) {
-        let E_ul = document.createElement('ul');
-        let E_li = document.createElement('li');
-        E_li.textContent = '整数値を入力してください';
-        E_ul.appendChild(E_li);
-        document.body.appendChild(E_ul);
+      const output = document.getElementById('output');
+      output.innerHTML = '';
+      if (!Number.isInteger(fizzNum) || !Number.isInteger(buzzNum) || fizzNum === 0 || buzzNum === 0) {
+        output.textContent = '整数値を入力してください';
         return;
       }
-
-      let ul = document.createElement('ul');
     
-      for(let i = 0; i < 100; i++) {
-        let li = document.createElement('li')
-        if(i % fizzNum === 0 && i % buzzNum === 0) {
+      for (let i = 1; i < 100; i++) {
+        const li = document.createElement('p')
+        if (i % fizzNum === 0 && i % buzzNum === 0) {
           li.textContent = 'FizzBuzz' + i;
-        } else if(i % fizzNum === 0) {
+        } else if (i % fizzNum === 0) {
           li.textContent = 'Fizz' + i;
-        } else if(i % buzzNum === 0) {
+        } else if (i % buzzNum === 0) {
           li.textContent = 'Buzz' + i;
         } else {
           li.textContent = '';
         }
         
-        ul.appendChild(li);
+        output.appendChild(li);
       }
-      document.body.appendChild(ul)
-    // }
-
-    // fizzbuzz();
-
-    // let ul = document.createElement('ul');
-    // for(let i = 0; i < 100; i++) {
-    //   let li = document.createElement('li');
-    //   li.textContent = 'Buzz' + i;
-    //   ul.appendChild(li);
-    // }
-    // document.body.appendChild(ul);
+      document.body.appendChild(output);
+    
   });
   
 
